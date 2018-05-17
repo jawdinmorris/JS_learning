@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title>Callbacks & JSON</title>
+
+  </head>
+  <body>
+
+
+    <script>
+    getRandomUser = callback => {
+      // This function uses AJAX to hit the random user API.
+      // More info: https://randomuser.me
+
+      var request = new XMLHttpRequest();
+      request.open('GET', 'https://pokeapi.co/api/v2/pokemon/1', true);
+      request.onload = function () {
+        /* You'll start here */
+        callback(request.response);
+      };
+
+      request.send();
+    }
+  function parseRandomUser(user) {
+      u = JSON.parse(user);
+      // u = u.results[0];
+      // document.open();
+      // document.write('<table border=1>')
+      // document.write('<tr>')
+      // document.write(`<td>First Name</td> <td>Last Name</td> <td>Email</td> <td>Gender</td>`)
+      // document.write('</tr>')
+      // document.write('<tr>')
+      // document.write(`<td>${u.name.first}</td> <td>${u.name.last}</td> <td>${u.email}</td> <td>${u.gender}</td>`)
+      // document.write('</tr>')
+      // document.write('</table>')
+      // document.write('<input id="clickMe" type="button" value="New User" onclick="getRandomUser(parseRandomUser);" />')
+    }
+
+    getRandomUser(parseRandomUser); // Execute the function
+    </script>
+  </body>
+</html>
