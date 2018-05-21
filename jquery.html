@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="utf-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <title>jquery</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <script src="https://code.jquery.com/jquery-3.3.1.min.js" integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8=" crossorigin="anonymous"></script>
+  <style>
+    h1 {
+      position: 'relative';
+      left: 100vw;
+      opacity: 0;
+      transition: all 3s ease-in-out;
+    }
+
+    h1.show {
+      left: 0;
+      opacity: 1;
+    }
+  </style>
+</head>
+
+<body>
+  <h1 style="display: block">I will fade in!!</h1>
+  <button>Click me!</button>
+  <script>
+    $('button').on('click', function() {
+      $('h1').toggleClass('show')
+    })
+  </script>
+</body>
+
+</html>
